@@ -4,7 +4,8 @@ public class FlyingEnemy : MonoBehaviour {
 
     private void Update()
     {
-        transform.position += (Player.instance.transform.position - transform.position).normalized * Time.deltaTime;
+        if(Vector3.Distance(transform.position, Player.instance.transform.position) < 15f)
+            transform.position += (Player.instance.transform.position - transform.position).normalized * Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -17,6 +17,18 @@ public class Player : MonoBehaviour {
     }
 
 
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Time.timeScale = 0.3f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
