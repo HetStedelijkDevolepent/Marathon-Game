@@ -5,12 +5,11 @@ public class Bullet : MonoBehaviour {
 
     private void Start()
     {
-        
+        StartCoroutine(Delete());
     }
 
     private void Update()
     {
-        print(transform.forward);
         transform.position += transform.right * Time.deltaTime * 10;
     }
 
