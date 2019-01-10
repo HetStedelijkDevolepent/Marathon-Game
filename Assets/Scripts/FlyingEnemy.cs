@@ -2,10 +2,16 @@
 
 public class FlyingEnemy : Enemy {
 
+    [SerializeField]
+    int maxrange;
+
+    
+
+
     private void Update()
     {
-        if(Vector3.Distance(transform.position, Player.instance.transform.position) < 15f)
-            transform.position += (Player.instance.transform.position - transform.position).normalized * Time.deltaTime;
+        if(Vector3.Distance(transform.position, Player.instance.transform.position) < maxrange)
+            transform.position += (Player.instance.transform.position - transform.position).normalized * Time.deltaTime * speed;
     }
 
     

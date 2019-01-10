@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     int Health = 1;
 
+    [SerializeField]
+    protected float speed;
+
     SpriteRenderer spriteRenderer;
 
     private void Awake()
