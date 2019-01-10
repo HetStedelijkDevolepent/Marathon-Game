@@ -42,6 +42,22 @@ public class Player : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
+
+        if (collision.collider.CompareTag("EnemyBullet"))
+        {
+            Destroy(collision.gameObject);
+            health -= 1;
+
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
+
+
+
+
+
 
 }
