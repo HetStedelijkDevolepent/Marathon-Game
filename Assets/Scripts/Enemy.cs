@@ -12,9 +12,10 @@ public class Enemy : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
-    private void Awake()
+    protected void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        print(spriteRenderer);
     }
 
 
