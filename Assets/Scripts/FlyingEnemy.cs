@@ -10,13 +10,13 @@ public class FlyingEnemy : Enemy {
 
     private void Update()
     {
-        if(Vector3.Distance(transform.position, Player.instance.transform.position) < maxrange)
+        if (Vector3.Distance(transform.position, Player.instance.transform.position) < maxrange)
             transform.position += (Player.instance.transform.position - transform.position).normalized * Time.deltaTime * speed;
     }
 
-    
 
-        
-    
+
+
+
 
 }
