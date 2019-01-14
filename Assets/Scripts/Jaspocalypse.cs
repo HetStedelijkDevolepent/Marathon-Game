@@ -8,6 +8,9 @@ public class Jaspocalypse : Enemy
     [SerializeField]
     float maxrange = 7f;
 
+    [SerializeField]
+    GameObject pullObject;
+
     Animator anim;
 
     private new void Awake()
@@ -34,9 +37,16 @@ public class Jaspocalypse : Enemy
 
         if (Vector3.Distance(transform.position, Player.instance.transform.position) > maxrange)
         {
-            Player.instance.GetComponent<Rigidbody2D>().AddForce((transform.position - Player.instance.transform.position) * 5f);
+
+            PullPlayer();
         }
 
 
+    }
+
+    private void PullPlayer()
+    {
+        StartCoroutine(Player.instance.GetComponent<PlayerPlatformerController>().GetPulled((transform.position - Player.instance.transform.position)));
+        Instantiate(pullObject, transform).transform.position += Vector3.right * 5 + Vector3.down;
     }
 }

@@ -189,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64455416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.65, y: 0.5, z: 0}
+  m_LocalPosition: {x: -5.4, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -229,6 +229,9 @@ MonoBehaviour:
   Health: 20
   speed: 0.6
   minrange: 3
+  maxrange: 10
+  pullObject: {fileID: 1352783425600721402, guid: e514d50903c74454394e793836febc82,
+    type: 3}
 --- !u!50 &64455421
 Rigidbody2D:
   serializedVersion: 4

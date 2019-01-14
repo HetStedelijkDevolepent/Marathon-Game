@@ -11,6 +11,8 @@ public class PlayerPlatformerController : PhysicsObject
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
+    bool gettingPulled = false;
+
     // Use this for initialization
     void Awake()
     {
@@ -20,6 +22,10 @@ public class PlayerPlatformerController : PhysicsObject
 
     protected override void ComputeVelocity()
     {
+
+        if (gettingPulled)
+            return;
+
         Vector2 move = Vector2.zero;
 
         move.x = Input.GetAxis("Horizontal");
@@ -49,5 +55,14 @@ public class PlayerPlatformerController : PhysicsObject
 
 
         targetVelocity = move * maxSpeed;
+    }
+
+
+    public IEnumerator GetPulled(Vector3 dir)
+    {
+        gettingPulled = true;
+        rb2d.AddForce(dir * 100f);
+        yield return new WaitForSeconds(.6f);
+        gettingPulled = false;
     }
 }
