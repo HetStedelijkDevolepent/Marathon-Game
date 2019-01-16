@@ -3,7 +3,13 @@
 public class Player : MonoBehaviour {
 
     [SerializeField]
-    int maxHealth = 10;
+    int maxHealth = 11;
+
+    [SerializeField]
+    Sprite[] healthbarSprites;
+
+    [SerializeField]
+    SpriteRenderer healthBar;
 
     int health;
 
@@ -35,28 +41,30 @@ public class Player : MonoBehaviour {
         if(collision.gameObject.layer == 9)
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage();
-            health -= 1;
-
-            if(health <= 0)
-            {
-                Destroy(gameObject);
-            }
+            TakeDamage();
         }
 
         if (collision.collider.CompareTag("EnemyBullet"))
         {
             Destroy(collision.gameObject);
-            health -= 1;
+            TakeDamage();
+        }
+    }
 
-            if (health <= 0)
-            {
-                Destroy(gameObject);
-            }
+    void TakeDamage()
+    {
+        health -= 1;
+
+        healthBar.sprite = healthbarSprites[health];
+
+        if (health <= 1)
+        {
+            Destroy(gameObject);
         }
     }
 
 
-
+    
 
 
 
