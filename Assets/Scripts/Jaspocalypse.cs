@@ -64,6 +64,8 @@ public class Jaspocalypse : Enemy
         
         while (true)
         {
+            yield return new WaitForSeconds(1f);
+
             if (Vector3.Distance(transform.position, Player.instance.transform.position) < minrange)
             {
                 print("Smash");
@@ -74,7 +76,6 @@ public class Jaspocalypse : Enemy
                 yield return new WaitForSeconds(.3f);
 
             }
-            yield return new WaitForSeconds(1f);
             
         }
         
