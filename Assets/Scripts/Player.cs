@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class Player : MonoBehaviour {
-
+    
     [SerializeField]
     int maxHealth = 11;
 
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 9)
+        if(collision.collider.gameObject.layer == 9)
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage();
             TakeDamage();
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour {
 
         if (collision.collider.CompareTag("EnemyBullet"))
         {
-            Destroy(collision.gameObject);
+            Destroy(collision.collider.gameObject);
             TakeDamage();
         }
     }
@@ -65,7 +65,6 @@ public class Player : MonoBehaviour {
 
 
     
-
-
+    
 
 }

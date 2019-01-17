@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class Jaspocalypse : Enemy
 {
+    
     [SerializeField]
     float minrange = 3f;
 
@@ -11,14 +13,18 @@ public class Jaspocalypse : Enemy
     [SerializeField]
     GameObject pullObject;
 
+    [SerializeField]
+    GameObject smashCollider;
+
     Animator anim;
 
     private new void Awake()
     {
         base.Awake();
         anim = GetComponent<Animator>();
+        StartCoroutine(Smash());
     }
-
+    
     private void Update()
     {
         if (Vector3.Distance(transform.position, Player.instance.transform.position) > minrange)
@@ -31,7 +37,9 @@ public class Jaspocalypse : Enemy
         }
         else
         {
+
             anim.SetBool("walking", false);
+            
 
         }
 
@@ -49,4 +57,29 @@ public class Jaspocalypse : Enemy
         StartCoroutine(Player.instance.GetComponent<PlayerPlatformerController>().GetPulled((transform.position - Player.instance.transform.position)));
         Instantiate(pullObject, transform).transform.position += Vector3.right * 5 + Vector3.down;
     }
+    
+    
+    IEnumerator Smash()
+    {
+        
+        while (true)
+        {
+            if (Vector3.Distance(transform.position, Player.instance.transform.position) < minrange)
+            {
+                print("Smash");
+                anim.SetTrigger("smash");
+                yield return new WaitForSeconds(.1f);
+                Instantiate(smashCollider, transform);
+
+                yield return new WaitForSeconds(.3f);
+
+            }
+            yield return new WaitForSeconds(1f);
+            
+        }
+        
+        
+        
+    }
+    
 }

@@ -15,7 +15,6 @@ public class Enemy : MonoBehaviour
     protected void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        print(spriteRenderer);
     }
 
 

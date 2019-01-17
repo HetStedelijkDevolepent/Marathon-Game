@@ -170,7 +170,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5bbba803fb9016841b743a28ec346b76, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b94a68f0259a74141961199fdb70a3e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -228,9 +228,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 20
   speed: 0.6
-  minrange: 3
-  maxrange: 10
+  minrange: 4
+  maxrange: 7
   pullObject: {fileID: 1352783425600721402, guid: e514d50903c74454394e793836febc82,
+    type: 3}
+  smashCollider: {fileID: 1925450703722477673, guid: 84cab29dd0043014a9de595219663939,
     type: 3}
 --- !u!50 &64455421
 Rigidbody2D:
@@ -390,6 +392,10 @@ PrefabInstance:
     - target: {fileID: 1679442423800460, guid: 0affe4ae12d04cd4388166cb00e8d1eb, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679442423800460, guid: 0affe4ae12d04cd4388166cb00e8d1eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4907753694994990, guid: 0affe4ae12d04cd4388166cb00e8d1eb, type: 3}
       propertyPath: m_LocalPosition.x
