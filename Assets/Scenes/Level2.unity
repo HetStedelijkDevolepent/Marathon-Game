@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f9773323f35bfa4894cca13564186a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FollowSpeed: 2
+  FollowSpeed: 3
   Target: {fileID: 2128090145}
 --- !u!1001 &1201263005
 PrefabInstance:
