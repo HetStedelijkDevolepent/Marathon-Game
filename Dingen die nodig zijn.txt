@@ -3,14 +3,15 @@ Duidelijk maken dat je spatie ingedrukt kan houden om te higher  springen
 Respawnen
 attack boss
 ui 
+portal groter maken 
 max ammo en dan reload 
 jelle 
-guns
 
 emmet 
 other background portal 
 better background 
+bakground jaspocalyps
 morris 
-vallen glitch uitzoeken
-vastzit glitch uitzoeken
+vallen glitch uitzoeken : te ver naar de zijkant door pull
+vastzit glitch uitzoeken : jaspocalyps killen tijdens een pull 
 
