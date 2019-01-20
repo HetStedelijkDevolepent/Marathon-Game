@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - EnemyBullet
+  - Shockwave
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Bullet
   - Player
   - EnemyBullet
-  - 
+  - IgnoreEnemy
   - 
   - 
   - 

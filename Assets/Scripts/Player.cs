@@ -49,6 +49,12 @@ public class Player : MonoBehaviour {
             Destroy(collision.collider.gameObject);
             TakeDamage();
         }
+
+        if (collision.collider.CompareTag("Shockwave"))
+        {
+            Destroy(collision.collider.gameObject);
+            TakeDamage();
+        }
     }
 
     void TakeDamage()

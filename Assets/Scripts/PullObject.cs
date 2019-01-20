@@ -4,6 +4,8 @@ using System.Collections;
 public class PullObject : MonoBehaviour
 {
 
+
+
     private void Start()
     {
         StartCoroutine(DestroyObject());

@@ -232,6 +232,8 @@ MonoBehaviour:
   maxrange: 7
   pullObject: {fileID: 1352783425600721402, guid: e514d50903c74454394e793836febc82,
     type: 3}
+  Shockwave: {fileID: 2160498058105971623, guid: b21f672d637ba7841aefd0ca1c3fafe0,
+    type: 3}
   smashCollider: {fileID: 1925450703722477673, guid: 84cab29dd0043014a9de595219663939,
     type: 3}
 --- !u!50 &64455421

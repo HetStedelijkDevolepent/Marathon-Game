@@ -14,6 +14,9 @@ public class Jaspocalypse : Enemy
     GameObject pullObject;
 
     [SerializeField]
+    GameObject Shockwave;
+
+    [SerializeField]
     GameObject smashCollider;
 
     Animator anim;
@@ -33,7 +36,7 @@ public class Jaspocalypse : Enemy
             Vector3 direction = (Player.instance.transform.position - transform.position).normalized;
             transform.position += direction * Time.deltaTime * speed;
             transform.position = new Vector2(transform.position.x, .5f);
-            anim.SetBool("walking", true);
+            //anim.SetBool("walking", true);
         }
         else
         {
@@ -68,19 +71,44 @@ public class Jaspocalypse : Enemy
 
             if (Vector3.Distance(transform.position, Player.instance.transform.position) < minrange)
             {
-                print("Smash");
+
                 anim.SetTrigger("smash");
                 yield return new WaitForSeconds(.1f);
                 Instantiate(smashCollider, transform);
 
                 yield return new WaitForSeconds(.3f);
 
+
             }
-            
+            else if(Vector3.Distance(transform.position, Player.instance.transform.position) > minrange && Vector3.Distance(transform.position, Player.instance.transform.position) < maxrange)
+            {
+                print("Smashdown");
+                anim.SetBool("walking", false);
+
+                anim.SetTrigger("smashdown");
+                yield return new WaitForSeconds(.2f);
+
+                GameObject go = Instantiate(Shockwave, transform);
+                go.transform.parent = null;
+                go.GetComponent<Shockwave>().SetDirection(true);
+
+                go = Instantiate(Shockwave, transform);
+                go.transform.parent = null;
+                go.GetComponent<Shockwave>().SetDirection(false);
+
+
+                yield return new WaitForSeconds(.3f);
+            }
+            else
+            {
+
+            }
+
+            anim.SetBool("walking", true);
         }
-        
-        
-        
+
+
+
     }
     
 }
