@@ -11,6 +11,8 @@ public class Player : MonoBehaviour {
     [SerializeField]
     SpriteRenderer healthBar;
 
+    
+
     int health;
 
 

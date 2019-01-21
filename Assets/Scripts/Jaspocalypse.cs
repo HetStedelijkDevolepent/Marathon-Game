@@ -82,7 +82,7 @@ public class Jaspocalypse : Enemy
             }
             else if(Vector3.Distance(transform.position, Player.instance.transform.position) > minrange && Vector3.Distance(transform.position, Player.instance.transform.position) < maxrange)
             {
-                print("Smashdown");
+
                 anim.SetBool("walking", false);
 
                 anim.SetTrigger("smashdown");
