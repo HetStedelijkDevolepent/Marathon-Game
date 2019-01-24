@@ -1,10 +1,8 @@
 jesper 
 Duidelijk maken dat je spatie ingedrukt kan houden om te higher  springen
 Respawnen
-attack boss
 ui 
-portal groter maken 
-max ammo en dan reload 
+portal groter maken  
 jelle 
 
 emmet 
@@ -12,5 +10,5 @@ other background portal
 better background 
 bakground jaspocalyps
 morris 
-vastzit glitch uitzoeken : jaspocalyps killen tijdens een pull 
+ 
 
