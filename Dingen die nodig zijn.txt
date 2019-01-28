@@ -1,14 +1,18 @@
 jesper 
 Duidelijk maken dat je spatie ingedrukt kan houden om te higher  springen
 Respawnen
-ui 
+
 portal groter maken  
+level generation
 jelle 
 
 emmet 
 other background portal 
 better background 
 bakground jaspocalyps
+smash omhoog 
+ui 
+respawnen 
 morris 
  
 
