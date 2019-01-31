@@ -1,0 +1,9 @@
+segments
+parkour
+ met spikes
+ zonder spikes
+mobs
+ zwakke 
+ sterke 
+pickups 
+obstacels 
