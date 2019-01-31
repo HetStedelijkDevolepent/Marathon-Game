@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour {
     private void Update()
     {
 
-        rb.MovePosition(transform.position + transform.right * Time.deltaTime * 10);
+        rb.velocity = (transform.right* 10);
     }
 
     IEnumerator Delete()

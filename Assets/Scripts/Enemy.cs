@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -50,7 +49,7 @@ public class Enemy : MonoBehaviour
         spriteRenderer.color = Color.white;
     }
 
-    private void Die()
+    protected virtual void Die()
     {
         Destroy(gameObject);
     }
