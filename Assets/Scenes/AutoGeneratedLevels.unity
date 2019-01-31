@@ -141,13 +141,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c9b1eb1a9e4c46438248e203757c96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelSegments: 20
   player: {fileID: 1357194323}
-  levelSegments:
+  veryCommonLevelSegments:
   - {fileID: 11400000, guid: 2ceaf5d899ece42429ea210a87437b60, type: 2}
-  - {fileID: 11400000, guid: bcbe13375ae51ea4a9e27b62e92cafb5, type: 2}
-  - {fileID: 11400000, guid: 2ceaf5d899ece42429ea210a87437b60, type: 2}
+  commonLevelSegments:
   - {fileID: 11400000, guid: 366a5f1110410bb4fb94b83ba0579c4a, type: 2}
-  - {fileID: 11400000, guid: 2ceaf5d899ece42429ea210a87437b60, type: 2}
+  - {fileID: 11400000, guid: bcbe13375ae51ea4a9e27b62e92cafb5, type: 2}
   - {fileID: 11400000, guid: 861bff4f2f9283e4994addef5e973768, type: 2}
   style: 0
   normalGround: {fileID: 472957216321839686, guid: c304458f65855c24ba9ea576bae9b3f6,

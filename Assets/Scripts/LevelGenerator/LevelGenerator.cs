@@ -4,11 +4,18 @@ using System.Collections;
 public class LevelGenerator : MonoBehaviour
 {
     [SerializeField]
+    int levelSegments = 20;
+
+
+    [SerializeField]
     GameObject player;
 
 
     [SerializeField]
-    LevelSegment[] levelSegments;
+    LevelSegment[] veryCommonLevelSegments;
+
+    [SerializeField]
+    LevelSegment[] commonLevelSegments;
 
     [SerializeField]
     SegmentStyle style;
@@ -37,10 +44,24 @@ public class LevelGenerator : MonoBehaviour
     private void GenerateLevel()
     {
         SetBackground();
-        foreach(LevelSegment segment in levelSegments)
+
+        for (int i = 0; i < levelSegments; i++)
         {
-            GenerateSegment(segment);
+            LevelSegment l;
+            float rand = Random.Range(0f, 1f);
+            if(rand > 0.5f)
+            {
+                l = commonLevelSegments[Random.Range(0, commonLevelSegments.Length)];
+
+            }
+            else
+            {
+                l = veryCommonLevelSegments[Random.Range(0, veryCommonLevelSegments.Length)];
+            }
+            GenerateSegment(l);
+
         }
+
 
         StartCoroutine(EnablePlayer());
     }
