@@ -15,11 +15,18 @@ public class Player : MonoBehaviour {
 
     int health;
 
+    float slomoSeconds;
+    [SerializeField]
+    float maxSlomoSeconds = 1f;
+
+    bool slomoRanOut = false;
+
 
     public static Player instance;
 
     private void Awake()
     {
+        slomoSeconds = maxSlomoSeconds;
         instance = this;
         health = maxHealth;
     }
@@ -27,13 +34,24 @@ public class Player : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            slomoRanOut = false;
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && slomoSeconds >= 0 && !slomoRanOut)
         {
             Time.timeScale = 0.3f;
+            slomoSeconds -= Time.unscaledDeltaTime;
+            if(slomoSeconds <= 0)
+            {
+                slomoRanOut = true;
+            }
         }
         else
         {
             Time.timeScale = 1f;
+            slomoSeconds += Time.deltaTime;
+            slomoSeconds = Mathf.Clamp(slomoSeconds, 0, maxSlomoSeconds);
         }
     }
 

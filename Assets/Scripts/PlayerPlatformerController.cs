@@ -13,7 +13,6 @@ public class PlayerPlatformerController : PhysicsObject
 
     bool gettingPulled = false;
 
-    // Use this for initialization
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
